@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Card.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
@@ -16,8 +16,6 @@ const Card = ({person, index}) => {
             <div className="info">
                 <h1>{person.name}</h1>
             </div>
-            <label onClick={e => e.currentTarget.parentElement.remove()} className="fa-pull-left"><FontAwesomeIcon icon={faTimesCircle} color="red" size="5x"/></label>
-            <label onClick={e => e.currentTarget.parentElement.remove()} className="fa-pull-right"><FontAwesomeIcon icon={faCheckCircle} color="green" size="5x"/></label>
         </div>
     )
 };

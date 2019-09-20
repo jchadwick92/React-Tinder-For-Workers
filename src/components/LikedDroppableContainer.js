@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import './DroppableContainer.css';
-import Card from "./Card";
 
-const LikedDroppableContainer = ({unassignedPeople}) => {
+const LikedDroppableContainer = ({unassignedPeople, likedPersons}) => {
     const [people, setPeople] = useState(unassignedPeople);
-    const [likedPeople, setLikedPeople] = useState([]);
+    const [likedPeople, setLikedPeople] = useState(likedPersons);
     console.log("liked people: ", likedPeople)
 
     const allowDrop = ev => {

@@ -8,12 +8,12 @@ const Deck = ({persons}) => {
         <div className="deck">
             <ul>
                 {people.map((person, index) => {
-                        return <Card key={person.name} person={person} people={people} index={index}/>
+                        return <Card key={person.name} person={person} index={index}/>
                     }
                 )}
             </ul>
         </div>
     )
-}
+};
 
 export default Deck

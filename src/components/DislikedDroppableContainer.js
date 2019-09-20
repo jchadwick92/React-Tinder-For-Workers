@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './DroppableContainer.css';
 
-const DislikedDroppableContainer = ({unassignedPeople}) => {
+const DislikedDroppableContainer = ({unassignedPeople, dislikedPersons}) => {
     const [people, setPeople] = useState(unassignedPeople);
-    const [dislikedPeople, setDislikedPeople] = useState([]);
+    const [dislikedPeople, setDislikedPeople] = useState(dislikedPersons);
 
     console.log("disliked people: ", dislikedPeople);
 
