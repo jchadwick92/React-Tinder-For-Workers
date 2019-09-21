@@ -1,22 +1,16 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-import {newWorkersArray, newLikedWorkersArray, newDislikedWorkerArray} from "../utilities";
 
-const Actions = ({workers, likedWorkers, dislikedWorkers, onHandleLike, onHandleDislike}) => {
-
+const Actions = ({workers, onHandleLike, onHandleDislike}) => {
     const like = () => {
-        const nameOfTopCard = getTopCardName();
-        const workersArray = newWorkersArray(nameOfTopCard, workers);
-        const likedWorkersArray = newLikedWorkersArray(nameOfTopCard, workers, likedWorkers);
-        onHandleLike(workersArray, likedWorkersArray)
+        const worker = getTopCardName();
+        onHandleLike(worker)
     };
 
     const dislike = () => {
-        const nameOfTopCard = getTopCardName();
-        const workersArray = newWorkersArray(nameOfTopCard, workers);
-        const dislikedWorkersArray = newDislikedWorkerArray(nameOfTopCard, workers, dislikedWorkers);
-        onHandleDislike(workersArray, dislikedWorkersArray)
+        const worker = getTopCardName();
+        onHandleDislike(worker)
     };
 
     const getTopCardName = () => {

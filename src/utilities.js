@@ -7,7 +7,7 @@ export const newLikedWorkersArray = (name, workers, likedWorkers) => {
     return [...likedWorkers, worker]
 };
 
-export const newDislikedWorkerArray = (name, workers, dislikedWorkers) => {
+export const newDislikedWorkersArray = (name, workers, dislikedWorkers) => {
     const worker = workers.find(worker => worker.name === name);
     return [...dislikedWorkers, worker]
 };
