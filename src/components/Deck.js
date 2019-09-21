@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Card from "./Card";
 
-const Deck = ({persons}) => {
-    const [people, setPeople] = useState(persons);
+const Deck = ({workers}) => {
 
     return (
         <div className="deck">
             <ul>
-                {people.map((person, index) => {
-                        return <Card key={person.name} person={person} index={index}/>
+                {workers.map((worker, index) => {
+                        return <Card key={worker.name} worker={worker} index={index}/>
                     }
                 )}
             </ul>

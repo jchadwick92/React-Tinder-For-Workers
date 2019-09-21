@@ -1,42 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheckCircle, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import {newWorkersArray, newLikedWorkersArray, newDislikedWorkerArray} from "../utilities";
 
-const Actions = ({persons, likedPersons, dislikedPersons}) => {
-    const [people, setPeople] = useState(persons);
-    const [likedPeople, setLikedPeople] = useState(likedPersons);
-    const [dislikedPeople, setDislikedPeople] = useState(dislikedPersons);
+const Actions = ({workers, likedWorkers, dislikedWorkers, onHandleLike, onHandleDislike}) => {
 
     const like = () => {
-        const nameOfTopCard = getTopCardName()
-        document.getElementById(nameOfTopCard).remove();
-        addToLikedPeople(nameOfTopCard);
-        removePerson(nameOfTopCard);
+        const nameOfTopCard = getTopCardName();
+        const workersArray = newWorkersArray(nameOfTopCard, workers);
+        const likedWorkersArray = newLikedWorkersArray(nameOfTopCard, workers, likedWorkers);
+        onHandleLike(workersArray, likedWorkersArray)
     };
 
     const dislike = () => {
-        const nameOfTopCard = getTopCardName()
-        document.getElementById(nameOfTopCard).remove();
-        addToDislikedPeople(nameOfTopCard);
-        removePerson(nameOfTopCard);
+        const nameOfTopCard = getTopCardName();
+        const workersArray = newWorkersArray(nameOfTopCard, workers);
+        const dislikedWorkersArray = newDislikedWorkerArray(nameOfTopCard, workers, dislikedWorkers);
+        onHandleDislike(workersArray, dislikedWorkersArray)
     };
 
     const getTopCardName = () => {
-        return people[people.length -1].name;
-    };
-
-    const addToLikedPeople = (name) => {
-        const person = people.find(person => person.name === name);
-        setLikedPeople([...likedPeople, person])
-    };
-
-    const addToDislikedPeople = (name) => {
-        const person = people.find(person => person.name === name);
-        setDislikedPeople([...dislikedPeople, person])
-    };
-
-    const removePerson = (name) => {
-        setPeople(people.filter(person => person.name !== name))
+        return workers[workers.length -1].name;
     };
 
     return (

@@ -1,11 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './DroppableContainer.css';
+import {newDislikedWorkerArray, newWorkersArray} from "../utilities";
 
-const DislikedDroppableContainer = ({unassignedPeople, dislikedPersons}) => {
-    const [people, setPeople] = useState(unassignedPeople);
-    const [dislikedPeople, setDislikedPeople] = useState(dislikedPersons);
-
-    console.log("disliked people: ", dislikedPeople);
+const DislikedDroppableContainer = ({workers, dislikedWorkers, onHandleDislike}) => {
 
     const allowDrop = ev => {
         ev.preventDefault();
@@ -14,18 +11,9 @@ const DislikedDroppableContainer = ({unassignedPeople, dislikedPersons}) => {
     const drop = ev => {
         ev.preventDefault();
         const data = ev.dataTransfer.getData("text");
-        document.getElementById(data).remove();
-        addToDislikedPeople(data);
-        removePerson(data);
-    };
-
-    const addToDislikedPeople = (name) => {
-        const person = people.find(person => person.name === name);
-        setDislikedPeople([...dislikedPeople, person])
-    };
-
-    const removePerson = (name) => {
-        setPeople(people.filter(person => person.name !== name))
+        const workersArray = newWorkersArray(data, workers);
+        const dislikedWorkersArray = newDislikedWorkerArray(data, workers, dislikedWorkers);
+        onHandleDislike(workersArray, dislikedWorkersArray)
     };
 
     return (

@@ -7,18 +7,36 @@ import DislikedDroppableContainer from "./components/DislikedDroppableContainer"
 import Actions from "./components/Actions";
 
 const App = () => {
-    const [people, setPeople] = useState(data);
-    const [likedPeople, setLikedPeople] = useState([]);
-    const [dislikedPeople, setDislikedPeople] = useState([]);
+    const [workers, setWorkers] = useState(data);
+    const [likedWorkers, setLikedWorkers] = useState([]);
+    const [dislikedWorkers, setDislikedWorkers] = useState([]);
+
+    console.log("App workers:", workers)
+    console.log("App liked workers:", likedWorkers)
+    console.log("App disliked workers:", dislikedWorkers)
+
+    const onHandleLike = (updatedWorkers, updatedLikedWorkers) => {
+        setWorkers(updatedWorkers);
+        setLikedWorkers(updatedLikedWorkers);
+    };
+
+    const onHandleDislike = (updatedWorkers, updatedDislikedWorkers) => {
+        setWorkers(updatedWorkers);
+        setDislikedWorkers(updatedDislikedWorkers);
+    };
 
     return (
         <div className="row">
-            <div className="column"><DislikedDroppableContainer unassignedPeople={people} dislikedPersons={dislikedPeople}/></div>
+            <div className="column"><DislikedDroppableContainer onHandleDislike={onHandleDislike} workers={workers} dislikedWorkers={dislikedWorkers}/></div>
             <div className="column">
-                <Deck persons={people}/>
-                <Actions persons={people} likedPersons={likedPeople} dislikedPersons={dislikedPeople}/>
+                {workers.length === 0 ? (
+                    <h3>No Workers Found</h3>
+                ) : (<div>
+                    <Deck workers={workers}/>
+                    <Actions workers={workers} likedWorkers={likedWorkers} dislikedWorkers={dislikedWorkers} onHandleLike={onHandleLike} onHandleDislike={onHandleDislike} />
+                </div>)}
             </div>
-            <div className="column"><LikedDroppableContainer unassignedPeople={people} likedPersons={likedPeople}/></div>
+            <div className="column"><LikedDroppableContainer onHandleLike={onHandleLike} workers={workers} likedWorkers={likedWorkers}/></div>
         </div>
     );
 }
