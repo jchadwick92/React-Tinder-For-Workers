@@ -10,9 +10,9 @@ const LikedDroppableContainer = ({workers, likedWorkers, onHandleLike}) => {
 
     const drop = ev => {
         ev.preventDefault();
-        const data = ev.dataTransfer.getData("text");
-        const workersArray = newWorkersArray(data, workers);
-        const likedWorkersArray = newLikedWorkersArray(data, workers, likedWorkers);
+        const workerName = ev.dataTransfer.getData("text");
+        const workersArray = newWorkersArray(workerName, workers);
+        const likedWorkersArray = newLikedWorkersArray(workerName, workers, likedWorkers);
         onHandleLike(workersArray, likedWorkersArray)
     };
 

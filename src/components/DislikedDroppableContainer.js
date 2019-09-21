@@ -10,9 +10,9 @@ const DislikedDroppableContainer = ({workers, dislikedWorkers, onHandleDislike})
 
     const drop = ev => {
         ev.preventDefault();
-        const data = ev.dataTransfer.getData("text");
-        const workersArray = newWorkersArray(data, workers);
-        const dislikedWorkersArray = newDislikedWorkerArray(data, workers, dislikedWorkers);
+        const workerName = ev.dataTransfer.getData("text");
+        const workersArray = newWorkersArray(workerName, workers);
+        const dislikedWorkersArray = newDislikedWorkerArray(workerName, workers, dislikedWorkers);
         onHandleDislike(workersArray, dislikedWorkersArray)
     };
 

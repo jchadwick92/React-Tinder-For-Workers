@@ -4,14 +4,21 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
+    border: 1px solid darkgray;
     background-color: white;
     transform: translateX(-50%) translateY(-50%);
     border-radius: 25px;
     padding: 25px;
 }
-.top {
 
+.bottom {
+    top: 51%;
+    width: 290px;
+}
+
+.second-bottom {
+    top: 50.5%;
+    width: 295px;
 }
 
 .info {
