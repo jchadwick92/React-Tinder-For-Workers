@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './App.css';
 import Deck from "./components/Deck";
 import data from "./data";
-import Actions from "./components/Actions";
 import {newDislikedWorkersArray, newLikedWorkersArray, newWorkersArray} from "./utilities";
 import DroppableContainer from "./components/DroppableContainer";
 
@@ -29,12 +28,10 @@ const App = () => {
         <div className="row">
             <div className="column"><DroppableContainer onHandleDrop={handleDislike}/></div>
             <div className="column">
-                {workers.length === 0 ? (
-                    <h3>No Workers Found</h3>
-                ) : (<div>
-                    <Deck workers={workers}/>
-                    <Actions workers={workers} onHandleLike={handleLike} onHandleDislike={handleDislike} />
-                </div>)}
+                {workers.length === 0
+                    ? (<h3>No Workers Found</h3>)
+                    : (<Deck workers={workers} onHandleLike={handleLike} onHandleDislike={handleDislike}/>)
+                }
             </div>
             <div className="column"><DroppableContainer onHandleDrop={handleLike}/></div>
         </div>

@@ -1,7 +1,9 @@
 import React from 'react';
 import Card from "./Card";
+import Actions from "./Actions";
+import "./Deck.css"
 
-const Deck = ({workers}) => {
+const Deck = ({workers, onHandleLike, onHandleDislike}) => {
 
     return (
         <div className="deck">
@@ -11,6 +13,7 @@ const Deck = ({workers}) => {
                     }
                 )}
             </ul>
+            <Actions  workers={workers} onHandleLike={onHandleLike} onHandleDislike={onHandleDislike}/>
         </div>
     )
 };
