@@ -1,6 +1,63 @@
+.row {
+  height: 100%
+}
 .column {
   float: left;
   width: 33.33%;
-  height: 1000px;
+  height: 100%
 }
 
+.droppable-container {
+  height: 100%;
+}
+
+.deck {
+  width: 300px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.actions {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  height: 80%;
+  position: fixed;
+  background-color: white;
+  border-radius: 25px;
+  /*width: 30%;*/
+  /*height: 45%;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  border: 1px solid darkgray;
+  /*transform: translateX(-50%) translateY(-50%);*/
+  /*padding: 25px;*/
+}
+
+.bottom {
+  top: 2%;
+  width: 98%;
+}
+
+.second-bottom {
+  top: 1%;
+  width: 99%;
+}
+
+.image-container {
+  width: 100%;
+  height: 75%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}

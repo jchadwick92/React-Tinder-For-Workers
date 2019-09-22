@@ -1,5 +1,4 @@
 import React from 'react';
-import './DroppableContainer.css';
 
 const DroppableContainer = ({onHandleDrop}) => {
     const allowDrop = ev => {
@@ -13,7 +12,7 @@ const DroppableContainer = ({onHandleDrop}) => {
     };
 
     return (
-        <div className="container-drag" onDrop={e => drop(e)} onDragOver={e => allowDrop(e)}/>
+        <div className="droppable-container" onDrop={e => drop(e)} onDragOver={e => allowDrop(e)}/>
     )
 };
 

@@ -29,7 +29,7 @@ const App = () => {
             <div className="column"><DroppableContainer onHandleDrop={handleDislike}/></div>
             <div className="column">
                 {workers.length === 0
-                    ? (<h3>No Workers Found</h3>)
+                    ? (<h3 className="text-center">No Workers Found</h3>)
                     : (<Deck workers={workers} onHandleLike={handleLike} onHandleDislike={handleDislike}/>)
                 }
             </div>

@@ -18,7 +18,7 @@ const Actions = ({workers, onHandleLike, onHandleDislike}) => {
     };
 
     return (
-        <div>
+        <div className="actions">
             <label onClick={() => dislike()} className="fa-pull-left"><FontAwesomeIcon icon={faTimesCircle} color="red" size="5x"/></label>
             <label onClick={() => like()} className="fa-pull-right"><FontAwesomeIcon icon={faCheckCircle} color="green" size="5x"/></label>
         </div>

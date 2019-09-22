@@ -1,5 +1,4 @@
 import React from 'react';
-import './Card.css'
 
 const Card = ({worker, index}) => {
     const drag = ev => {
@@ -10,21 +9,19 @@ const Card = ({worker, index}) => {
         switch(index) {
             case 0:
                 return " bottom";
-                break;
             case 1:
                 return " second-bottom";
-                break;
             default:
                 return ""
         }
-    }
+    };
 
     return (
         <div id={worker.name} className={"card" + getClassName(index)} draggable onDragStart={e => drag(e)}>
             <div className="image-container">
                 <img src='http://placecorgi.com/300/300' alt="james-bond" draggable="false"/>
             </div>
-            <div className="info">
+            <div className="text-center">
                 <h1>{worker.name}</h1>
             </div>
         </div>
