@@ -1,50 +1,22 @@
 export default [
     {
-        pics: [
-            "https://images.unsplash.com/photo-1520024146169-3240400354ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-        ],
-        name: "Heather",
-        age: 32,
-        distance: "4 miles away",
-        text:
-            "My nickname is Gilette because I'm the best a man can get. Also I will cut you."
+        image: "https://633987.smushcdn.com/907311/wp-content/uploads/2018/05/pulp-fiction-1300x731.jpg?lossy=1&strip=1&webp=1",
+        name: "Heather Robinson"
     },
     {
-        pics: [
-            "https://images.unsplash.com/photo-1522263842439-347f062b8475?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-        ],
-        name: "Chloe",
-        age: 18,
-        distance: "1 mile away",
-        text: "The C and the L are silent."
+        image: "https://ichef.bbci.co.uk/news/660/cpsprodpb/7886/production/_104145803_gladiator_gettyuniversal.jpg",
+        name: "Thomas Cook"
     },
     {
-        pics: [
-            "https://images.unsplash.com/photo-1539758462369-43adaa19bc1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-        ],
-        name: "Helen",
-        age: 19,
-        distance: "3 miles away",
-        text: "Aspiring MILF"
+        image: "https://www.telegraph.co.uk/content/dam/films/2018/05/29/tom-hanks-big_trans_NvBQzQNjv4Bq30BguQGZmi0LefBv1hnOgeWXCh5JESxRfFLJkszoOo8.jpg?imwidth=450",
+        name: "Daniel Goodman"
     },
     {
-        pics: [
-            "https://images.unsplash.com/photo-1514924801778-1db0aba75e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-        ],
-        name: "Savannah",
-        age: 29,
-        distance: "3 miles away",
-        text: "A little known fact is that I cover about 40% of Africa."
+        image: "https://static.highsnobiety.com/thumbor/1aLIYNGvPjnKNRXRXe_FPqO09Vk=/fit-in/480x320/smart/static.highsnobiety.com/wp-content/uploads/2017/07/31124918/brad-pitt-workout-routine-Main.jpg",
+        name: "James Gale"
     },
     {
-        pics: [
-            "https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
-            "https://images.unsplash.com/photo-1532635270-c09dac425ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-        ],
-        name: "Jane",
-        age: 22,
-        distance: "2 miles away",
-        text:
-            "On the first date I will carve our initials in a tree. It's the most romantic way to let you know I have a knife."
+        image: "https://akns-images.eonline.com/eol_images/Entire_Site/2019420/rs_1024x759-190520061134-1024-GOT-Finale-4-LT-052019-Helen-Sloan-HBO.jpg?fit=inside|900:auto&output-quality=90",
+        name: "Jane Ward"
     }
 ];

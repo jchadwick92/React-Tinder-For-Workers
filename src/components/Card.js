@@ -19,7 +19,7 @@ const Card = ({worker, index}) => {
     return (
         <div id={worker.name} className={"card" + getClassName(index)} draggable onDragStart={e => drag(e)}>
             <div className="image-container">
-                <img src='http://placecorgi.com/300/300' alt="james-bond" draggable="false"/>
+                <img src={worker.image} alt="james-bond" draggable="false"/>
             </div>
             <div className="text-center">
                 <h1>{worker.name}</h1>
