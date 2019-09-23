@@ -19,7 +19,15 @@ const App = () => {
     console.log("App disliked workers:", dislikedWorkers);
 
     const notify = (worker, like) =>
-        like ? toast(`${worker} has been liked`) : toast(`${worker} has been disliked`)
+        like
+            ? toast(`${worker} has been liked`, {
+                position: toast.POSITION.TOP_RIGHT,
+                type: toast.TYPE.SUCCESS
+            })
+            : toast(`${worker} has been disliked`, {
+                position: toast.POSITION.TOP_LEFT,
+                type: toast.TYPE.ERROR
+            });
 
     const handleLike = worker => {
         setWorkers(newWorkersArray(worker, workers));
