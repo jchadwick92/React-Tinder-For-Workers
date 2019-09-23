@@ -4,6 +4,10 @@ import Deck from "./components/Deck";
 import data from "./data";
 import {newDislikedWorkersArray, newLikedWorkersArray, newWorkersArray} from "./utilities";
 import DroppableContainer from "./components/DroppableContainer";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+
+toast.configure()
 
 const App = () => {
     const [workers, setWorkers] = useState(data);
@@ -14,14 +18,19 @@ const App = () => {
     console.log("App liked workers:", likedWorkers);
     console.log("App disliked workers:", dislikedWorkers);
 
+    const notify = (worker, like) =>
+        like ? toast(`${worker} has been liked`) : toast(`${worker} has been disliked`)
+
     const handleLike = worker => {
         setWorkers(newWorkersArray(worker, workers));
         setLikedWorkers(newLikedWorkersArray(worker, workers, likedWorkers));
+        notify(worker, true);
     };
 
     const handleDislike = worker => {
         setWorkers(newWorkersArray(worker, workers));
         setDislikedWorkers(newDislikedWorkersArray(worker, workers, dislikedWorkers));
+        notify(worker, false);
     };
 
     return (
